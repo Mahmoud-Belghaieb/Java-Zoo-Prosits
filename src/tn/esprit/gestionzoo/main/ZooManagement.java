@@ -1,4 +1,8 @@
-import java.util.Scanner;
+package tn.esprit.gestionzoo.main;
+
+import tn.esprit.gestionzoo.entities.Animal;
+
+import tn.esprit.gestionzoo.entities.Zoo;
 
 public class ZooManagement {
     //Prosit1:
@@ -7,13 +11,13 @@ public class ZooManagement {
 
     public static void main(String[] args) {
         //Prosit1:
-        /*ZooManagement zm = new ZooManagement();
+        /*tn.esprit.gestionzoo.main.ZooManagement zm = new tn.esprit.gestionzoo.main.ZooManagement();
         System.out.println(zm.zooName + " comporte " + zm.nbrCages + " cages.");
 
-        ZooManagement zm1 = new ZooManagement();
+        tn.esprit.gestionzoo.main.ZooManagement zm1 = new tn.esprit.gestionzoo.main.ZooManagement();
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("Nom du Zoo:");
+        System.out.println("Nom du tn.esprit.gestionzoo.entities.Zoo:");
         String NouvzooName = sc.nextLine();
         zm1.zooName = NouvzooName;
 
@@ -22,14 +26,14 @@ public class ZooManagement {
         zm1.nbrCages = NouvnbrCages;
 
 
-        System.out.println(zm1.zooName + " Zoo comporte " + zm1.nbrCages + " cages.");
+        System.out.println(zm1.zooName + " tn.esprit.gestionzoo.entities.Zoo comporte " + zm1.nbrCages + " cages.");
     }*/
 
         //Prosit 2:
         Animal Lion = new Animal("Cats", "saba3", 15, true);
 
         Zoo myZoo = new Zoo("jurassic park", "7affouz");
-        myZoo.animals = new Animal[25];
+        myZoo.setAnimals(new Animal[25]);
         Animal cat = new Animal("Tabby cat", "Puss in Boots", 2, true);
 
         //INSTRUCTION8:

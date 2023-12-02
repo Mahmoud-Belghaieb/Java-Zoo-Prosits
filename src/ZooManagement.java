@@ -28,7 +28,7 @@ public class ZooManagement {
         //Prosit 2:
         Animal Lion = new Animal("Cats", "saba3", 15, true);
 
-        Zoo myZoo = new Zoo("jurassic park", "7affouz", 25);
+        Zoo myZoo = new Zoo("jurassic park", "7affouz");
         myZoo.animals = new Animal[25];
         Animal cat = new Animal("Tabby cat", "Puss in Boots", 2, true);
 

@@ -57,16 +57,37 @@ public class ZooManagement {
 
         myZoo.displayAnimals();
 
-        System.out.println("-------------------------INSTRUCTION 21-------------------------------");
+        /*System.out.println("-------------------------INSTRUCTION 21-------------------------------");
         Aquatic aquatic = new Aquatic("Fish", "Shark", 1, true, "Sea");
         Terrestrial terrestrial = new Terrestrial("Girafe", "Camilia", 2, true, 4);
         Dolphin dolphin = new Dolphin("Delphinidae", "Casper", 3, true, "Ocean", 14.5f);
-        Penguin penguin = new Penguin("Spheniscidae", "Caesar", 4, true, "Ocean", 25.3f);
+        Penguin penguin = new Penguin("Spheniscidae", "Caesar", 4, true, "Ocean", 25.3f);*/
 
 
         //INSTRUCTION24:
-        aquatic.swim();
+       /* aquatic.swim();
         dolphin.swim();
-        penguin.swim();
+        penguin.swim();*/
+
+        Dolphin d = new Dolphin();
+        d.setSwimmingSpeed(24.5f);
+        myZoo.addAquaticAnimal(d);
+
+        Dolphin d1 = new Dolphin();
+        d1.setSwimmingSpeed(21.8f);
+        myZoo.addAquaticAnimal(d1);
+
+        Penguin p = new Penguin();
+        p.setSwimmingDepth(24.6f);
+        myZoo.addAquaticAnimal(p);
+
+        Penguin p1 = new Penguin();
+        p1.setSwimmingDepth(29.6f);
+        myZoo.addAquaticAnimal(p1);
+
+        for (int i = 0; i < myZoo.getNbrAquatics(); i++) {
+            Aquatic[] aquatics = myZoo.getAquaticAnimals();
+            aquatics[i].swim();
+        }
     }
 }

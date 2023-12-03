@@ -1,8 +1,6 @@
 package tn.esprit.gestionzoo.main;
 
-import tn.esprit.gestionzoo.entities.Animal;
-
-import tn.esprit.gestionzoo.entities.Zoo;
+import tn.esprit.gestionzoo.entities.*;
 
 public class ZooManagement {
     //Prosit1:
@@ -59,5 +57,16 @@ public class ZooManagement {
 
         myZoo.displayAnimals();
 
+        System.out.println("-------------------------INSTRUCTION 21-------------------------------");
+        Aquatic aquatic = new Aquatic("Fish", "Shark", 1, true, "Sea");
+        Terrestrial terrestrial = new Terrestrial("Girafe", "Camilia", 2, true, 4);
+        Dolphin dolphin = new Dolphin("Delphinidae", "Casper", 3, true, "Ocean", 14.5f);
+        Penguin penguin = new Penguin("Spheniscidae", "Caesar", 4, true, "Ocean", 25.3f);
+
+
+        //INSTRUCTION24:
+        aquatic.swim();
+        dolphin.swim();
+        penguin.swim();
     }
 }

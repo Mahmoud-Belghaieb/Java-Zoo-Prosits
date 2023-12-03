@@ -1,6 +1,8 @@
 package tn.esprit.gestionzoo.main;
 
 import tn.esprit.gestionzoo.entities.*;
+import tn.esprit.gestionzoo.exceptions.InvalidAgeException;
+import tn.esprit.gestionzoo.exceptions.ZooFullException;
 
 public class ZooManagement {
     //Prosit1:
@@ -8,43 +10,58 @@ public class ZooManagement {
     String zooName = "myZoo";*/
 
     public static void main(String[] args) {
-        //Prosit1:
-        /*tn.esprit.gestionzoo.main.ZooManagement zm = new tn.esprit.gestionzoo.main.ZooManagement();
-        System.out.println(zm.zooName + " comporte " + zm.nbrCages + " cages.");
 
-        tn.esprit.gestionzoo.main.ZooManagement zm1 = new tn.esprit.gestionzoo.main.ZooManagement();
-
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Nom du tn.esprit.gestionzoo.entities.Zoo:");
-        String NouvzooName = sc.nextLine();
-        zm1.zooName = NouvzooName;
-
-        System.out.println("Nombre des cages:");
-        int NouvnbrCages = sc.nextInt();
-        zm1.nbrCages = NouvnbrCages;
-
-
-        System.out.println(zm1.zooName + " tn.esprit.gestionzoo.entities.Zoo comporte " + zm1.nbrCages + " cages.");
-    }*/
-
-        //Prosit 2:
-        Animal Lion = new Animal("Cats", "saba3", 15, true);
+        Animal Lion = new Animal();
+        Lion.setName("saba3");
+        try{
+            Lion.setAge(8);
+        } catch (InvalidAgeException e) {
+            System.out.println(
+                    e.getMessage()
+            );
+        }
+        Lion.setFamily("Cats");
+        Lion.setMammal(true);
 
         Zoo myZoo = new Zoo("jurassic park", "7affouz");
         myZoo.setAnimals(new Animal[25]);
         Animal cat = new Animal("Tabby cat", "Puss in Boots", 2, true);
 
-        //INSTRUCTION8:
-        //myZoo.displayZoo();
-        System.out.println(myZoo);
-        System.out.println(myZoo.toString());
-        /*------------------------------------------------------------------------------*/
+        try {
+            myZoo.addAnimal(Lion);
+        } catch (ZooFullException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            System.out.println(myZoo.getName() + " contient " + myZoo.getNbrAnimals() + " animaux");
+        }
+        try {
+            myZoo.addAnimal(cat);
+        } catch (ZooFullException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            System.out.println(myZoo.getName() + " contient " + myZoo.getNbrAnimals() + " animaux");
+        }
 
         System.out.println(myZoo);
         System.out.println(myZoo.toString());
 
-        System.out.println(myZoo.addAnimal(Lion));
-        System.out.println(myZoo.addAnimal(cat));
+        System.out.println(myZoo);
+        System.out.println(myZoo.toString());
+
+        try {
+            myZoo.addAnimal(Lion);
+        } catch (ZooFullException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            System.out.println(myZoo.getName() + " contient " + myZoo.getNbrAnimals() + " animaux");
+        }
+        try {
+            myZoo.addAnimal(cat);
+        } catch (ZooFullException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            System.out.println(myZoo.getName() + " contient " + myZoo.getNbrAnimals() + " animaux");
+        }
 
         myZoo.displayAnimals();
 
@@ -54,20 +71,7 @@ public class ZooManagement {
 
         System.out.println(myZoo.removeAnimal(cat));
 
-
         myZoo.displayAnimals();
-
-        /*System.out.println("-------------------------INSTRUCTION 21-------------------------------");
-        Aquatic aquatic = new Aquatic("Fish", "Shark", 1, true, "Sea");
-        Terrestrial terrestrial = new Terrestrial("Girafe", "Camilia", 2, true, 4);
-        Dolphin dolphin = new Dolphin("Delphinidae", "Casper", 3, true, "Ocean", 14.5f);
-        Penguin penguin = new Penguin("Spheniscidae", "Caesar", 4, true, "Ocean", 25.3f);*/
-
-
-        //INSTRUCTION24:
-       /* aquatic.swim();
-        dolphin.swim();
-        penguin.swim();*/
 
         Dolphin d = new Dolphin();
         d.setSwimmingSpeed(24.5f);

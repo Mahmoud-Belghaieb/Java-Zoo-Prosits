@@ -1,4 +1,5 @@
 package tn.esprit.gestionzoo.entities;
+import tn.esprit.gestionzoo.interfaces.Food;
 
 public class Dolphin extends  Aquatic{
     private  float swimmingSpeed;
@@ -31,4 +32,8 @@ public class Dolphin extends  Aquatic{
         return super.toString() + ", swimmingSpeed:" + swimmingSpeed;
     }
 
+    @Override
+    public void eatMeat(Food meat) {
+
+    }
 }

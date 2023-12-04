@@ -1,6 +1,9 @@
 package tn.esprit.gestionzoo.entities;
 
-public abstract non-sealed class Aquatic extends Animal {
+import tn.esprit.gestionzoo.interfaces.Carnivore;
+import tn.esprit.gestionzoo.interfaces.Food;
+
+public abstract non-sealed class Aquatic extends Animal implements Carnivore<Food> {
     protected String habitat;
 
     public String getHabitat() {
